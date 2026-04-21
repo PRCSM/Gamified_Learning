@@ -1,18 +1,29 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { LucideIcon } from 'lucide-react'
+import { Link2, Layers, BarChart2, Search, LucideIcon } from 'lucide-react'
+
+const ICONS = {
+  link: Link2,
+  layers: Layers,
+  chart: BarChart2,
+  search: Search,
+} as const
+
+type IconKey = keyof typeof ICONS
 
 interface Props {
   slug: string
   title: string
   description: string
-  icon: LucideIcon
+  iconKey: IconKey
   category: 'DS' | 'DAA'
   color: string
 }
 
-export function VisualizerCard({ slug, title, description, icon: Icon, category, color }: Props) {
+export function VisualizerCard({ slug, title, description, iconKey, category, color }: Props) {
+  const Icon: LucideIcon = ICONS[iconKey]
+
   return (
     <motion.div whileHover={{ y: -4, scale: 1.02 }} transition={{ duration: 0.2 }}>
       <Link href={`/visualizer/${slug}`} className="block p-6 bg-slate-800/60 border border-slate-700 rounded-2xl hover:border-slate-500 transition-colors group">

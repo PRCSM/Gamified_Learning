@@ -1,12 +1,20 @@
 import PageContainer from '@/components/layout/PageContainer'
 import { VisualizerCard } from '@/components/visualizer/VisualizerCard'
-import { Link2, Layers, BarChart2, Search } from 'lucide-react'
 
-const DEMOS = [
-  { slug: 'linked-list', title: 'Linked List', description: 'Add and remove nodes. See pointer connections animate in real time.', icon: Link2, category: 'DS' as const, color: '#818cf8' },
-  { slug: 'stack-queue', title: 'Stack & Queue', description: 'Push, pop, enqueue, and dequeue. See LIFO vs FIFO in action.', icon: Layers, category: 'DS' as const, color: '#34d399' },
-  { slug: 'bubble-sort', title: 'Bubble Sort', description: 'Watch adjacent elements compare and swap step by step.', icon: BarChart2, category: 'DAA' as const, color: '#facc15' },
-  { slug: 'binary-search', title: 'Binary Search', description: 'See the search space halve with each comparison.', icon: Search, category: 'DAA' as const, color: '#FC5107' },
+type Demo = {
+  slug: string
+  title: string
+  description: string
+  iconKey: 'link' | 'layers' | 'chart' | 'search'
+  category: 'DS' | 'DAA'
+  color: string
+}
+
+const DEMOS: Demo[] = [
+  { slug: 'linked-list', title: 'Linked List', description: 'Add and remove nodes. See pointer connections animate in real time.', iconKey: 'link', category: 'DS', color: '#818cf8' },
+  { slug: 'stack-queue', title: 'Stack & Queue', description: 'Push, pop, enqueue, and dequeue. See LIFO vs FIFO in action.', iconKey: 'layers', category: 'DS', color: '#34d399' },
+  { slug: 'bubble-sort', title: 'Bubble Sort', description: 'Watch adjacent elements compare and swap step by step.', iconKey: 'chart', category: 'DAA', color: '#facc15' },
+  { slug: 'binary-search', title: 'Binary Search', description: 'See the search space halve with each comparison.', iconKey: 'search', category: 'DAA', color: '#FC5107' },
 ]
 
 export default function VisualizerPage() {
