@@ -3,6 +3,7 @@
 import { Search, Bell } from 'lucide-react';
 import Avatar from '@/components/ui/Avatar';
 import { useAuth } from '@/contexts/AuthContext';
+import { VoiceCommandButton } from '@/components/voice/VoiceCommandButton';
 
 export default function TopNavigation() {
   const { userProfile } = useAuth();
@@ -23,6 +24,7 @@ export default function TopNavigation() {
 
       {/* Right side */}
       <div className="flex items-center gap-4">
+        <VoiceCommandButton />
         <button className="relative p-2 rounded-[7px] hover:bg-bg-tertiary transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center">
           <Bell size={18} className="text-text-secondary" />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full" />
