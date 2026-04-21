@@ -11,6 +11,8 @@ import {
   User,
   LogOut,
   ChevronLeft,
+  FlaskConical,
+  Zap,
 } from 'lucide-react';
 import { useState } from 'react';
 import { logoutUser } from '@/lib/firebase/auth';
@@ -20,6 +22,8 @@ const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/lessons', label: 'Lessons', icon: BookOpen },
   { href: '/quiz', label: 'Quizzes', icon: HelpCircle },
+  { href: '/visualizer', label: 'Visual Lab', icon: FlaskConical },
+  { href: '/challenge', label: 'Challenge', icon: Zap },
   { href: '/leaderboard', label: 'Leaderboard', icon: Trophy },
   { href: '/profile', label: 'Profile', icon: User },
 ];
