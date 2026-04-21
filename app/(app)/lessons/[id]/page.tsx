@@ -20,6 +20,7 @@ import HeadingHierarchy from '@/components/learning/HeadingHierarchy';
 import { sampleLessons } from '@/lib/data/lessons';
 import { completeLesson } from '@/lib/firebase/firestore';
 import { Lesson } from '@/types';
+import { VoiceNarrator } from '@/components/voice/VoiceNarrator';
 
 export default function LessonViewerPage() {
   const params = useParams();
@@ -167,6 +168,7 @@ export default function LessonViewerPage() {
           </Link>
         </div>
       </div>
+      <VoiceNarrator text={lesson ? lesson.content.map((b: any) => b.text || b.content || b.description || '').filter(Boolean).join('. ') : ''} />
     </PageContainer>
   );
 }
