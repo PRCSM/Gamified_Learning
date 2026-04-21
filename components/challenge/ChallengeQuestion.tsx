@@ -53,7 +53,7 @@ export function ChallengeQuestion({ question, options, questionNumber, totalQues
         </div>
       </div>
 
-      <h2 className="text-xl font-semibold text-slate-100">{question}</h2>
+      <h2 className="text-xl font-semibold text-black">{question}</h2>
 
       <div className="grid grid-cols-1 gap-3">
         {options.map((opt, i) => (
